@@ -18,6 +18,8 @@ public:
 	std::string get_current_traffic_light_state();
 	void reset_traffic_light_timer();
 
+	void increment_traffic_light_timer();
+
 	int get_traffic_light_timer() const;
 };
 

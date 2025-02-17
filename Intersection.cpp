@@ -2,7 +2,7 @@
 
 void Intersection::update_light_timer()
 {
-	traffic_light.get_traffic_light_timer()++;
+	traffic_light.increment_traffic_light_timer();
 	if (traffic_light.get_traffic_light_timer() >= 5)
 	{
 		traffic_light.change_traffic_light_state();

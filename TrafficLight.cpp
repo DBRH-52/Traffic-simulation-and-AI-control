@@ -25,11 +25,11 @@ std::string TrafficLight::get_current_traffic_light_state()
 {
 	switch (current_traffic_light_state)
 	{
-	case RED:
+	case Traffic_Light_state::RED:
 		return "RED";
-	case YELLOW:
+	case Traffic_Light_state::YELLOW:
 		return "YELLOW";
-	case GREEN:
+	case Traffic_Light_state::GREEN:
 		return "GREEN";
 	default:
 		return "UNKNOWN";
@@ -38,6 +38,11 @@ std::string TrafficLight::get_current_traffic_light_state()
 void TrafficLight::reset_traffic_light_timer()
 {
 	traffic_light_timer = 0;
+}
+
+void TrafficLight::increment_traffic_light_timer()
+{
+	traffic_light_timer++;
 }
 
 int TrafficLight::get_traffic_light_timer() const
