@@ -10,9 +10,9 @@ int main()
 	Intersection intersection;
 	TrafficController traffic_controller(intersection, road);
 
-	road.add_vehicle(Vehicle(1, 2));
-	road.add_vehicle(Vehicle(2, 3));
-	road.add_vehicle(Vehicle(3, 4));
+	//road.add_vehicle(Vehicle(1, 2));
+	//road.add_vehicle(Vehicle(2, 3));
+	//road.add_vehicle(Vehicle(3, 4));
 
 	for (int i = 0; i < 20; i++)
 	{

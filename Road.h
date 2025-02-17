@@ -18,7 +18,7 @@ public:
 	void update_road();
 	void display_vehicle();
 
-	const std::vector<Vehicle>& get_vehicles();
+	std::vector<Vehicle>& get_vehicles();
 };
 
 #endif //ROAD_H

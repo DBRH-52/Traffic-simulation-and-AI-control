@@ -3,6 +3,10 @@
 Road::Road(int _length) : road_length(_length)
 {
 }
+std::vector<Vehicle>& Road::get_vehicles()
+{
+	return vehicles;
+}
 
 void Road::add_vehicle(Vehicle& vehicle)
 {
@@ -23,7 +27,3 @@ void Road::display_vehicle()
 	}
 }
 
-const std::vector<Vehicle>& Road::get_vehicles()
-{
-	return vehicles;
-}
