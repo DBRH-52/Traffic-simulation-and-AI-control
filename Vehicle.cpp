@@ -23,6 +23,7 @@ void Vehicle::vehicle_drive()
 {
 	vehicle_stopped = false;
 }
+
 int Vehicle::get_vehicle_id() const
 {
 	return vehicle_id;

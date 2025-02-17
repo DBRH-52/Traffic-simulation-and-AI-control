@@ -17,6 +17,8 @@ public:
 	void change_traffic_light_state();
 	std::string get_current_traffic_light_state();
 	void reset_traffic_light_timer();
+
+	int get_traffic_light_timer() const;
 };
 
 #endif //TRAFFICLIGHT_H

@@ -39,3 +39,8 @@ void TrafficLight::reset_traffic_light_timer()
 {
 	traffic_light_timer = 0;
 }
+
+int TrafficLight::get_traffic_light_timer() const
+{
+	return traffic_light_timer;
+}
