@@ -12,7 +12,7 @@ void Vehicle::vehicle_move()
 {
 	if (!vehicle_stopped)
 	{
-		vehicle_position += vehicle_speed;
+		vehicle_position += 2 + (vehicle_id % 3);
 		std::cout << "Vehicle " << vehicle_id << " is moving." << std::endl;
 		std::cout << "New position: " << vehicle_position << std::endl;
 	}
