@@ -49,3 +49,8 @@ int TrafficLight::get_traffic_light_timer() const
 {
 	return traffic_light_timer;
 }
+
+TrafficLight::Traffic_Light_state TrafficLight::get_current_traffic_light_enum() const
+{
+	return current_traffic_light_state;
+}

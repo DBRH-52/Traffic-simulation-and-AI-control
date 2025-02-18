@@ -8,9 +8,9 @@ void Intersection::update_light_timer()
 		traffic_light.change_traffic_light_state();
 		traffic_light.reset_traffic_light_timer();
 	}
-	std::cout << "Updated traffic light state: " << traffic_light.get_current_traffic_light_state() << std::endl;
+	//std::cout << "Updated traffic light state: " << traffic_light.get_current_traffic_light_state() << std::endl;
 }
-void Intersection::display_traffic_light_state()
+std::string Intersection::display_traffic_light_state()
 {
-	std::cout << "Traffic light state: " << traffic_light.get_current_traffic_light_state() << std::endl;
+	return traffic_light.get_current_traffic_light_state();
 }

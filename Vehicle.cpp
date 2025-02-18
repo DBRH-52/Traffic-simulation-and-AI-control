@@ -1,25 +1,43 @@
 #include "Vehicle.h"
 
-Vehicle::Vehicle(int _id, int _speed)
+Vehicle::Vehicle(int _id, int _speed, TrafficLight* _traffic_light)
 {
 	vehicle_id = _id;
 	vehicle_position = 0;
 	vehicle_speed = _speed;
 	vehicle_stopped = false;
+	traffic_light = _traffic_light;
 }
+
+/*void Vehicle::set_traffic_light_state(TrafficLight* _traffic_light)
+{
+	traffic_light_state = _traffic_light_state;
+}*/
 
 void Vehicle::vehicle_move()
 {
 	if (!vehicle_stopped)
 	{
-		vehicle_position += 2 + (vehicle_id % 3);
-		std::cout << "Vehicle " << vehicle_id << " is moving." << std::endl;
-		std::cout << "New position: " << vehicle_position << std::endl;
+		//auto current_traffic_light_state = traffic_light->get_current_traffic_light_enum();
+		//std::string current_traffic_light_state = traffic_light->get_current_traffic_light_enum();
+		TrafficLight::Traffic_Light_state current_traffic_light_state = traffic_light->get_current_traffic_light_enum();
+		if (current_traffic_light_state == TrafficLight::GREEN)
+		{ 
+			vehicle_position += 2 + (vehicle_id % 3);
+			vehicle_position += vehicle_speed;
+		}
+		else if (current_traffic_light_state == TrafficLight::YELLOW)
+		{
+			vehicle_speed = std::max(vehicle_speed - 1, 1);
+			vehicle_position += vehicle_speed;
+		}
+		else if (current_traffic_light_state == TrafficLight::RED)
+		{
+			vehicle_speed = 0;
+			vehicle_position += vehicle_speed;
+		}
 	}
-	else
-	{
-		std::cout << "Vehicle " << vehicle_id << " is stopped." << std::endl;
-	}
+	
 }
 void Vehicle::vehicle_stop()
 {

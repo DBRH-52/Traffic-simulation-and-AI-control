@@ -7,13 +7,14 @@ TrafficController::TrafficController(Intersection& _intersection, Road& _road)
 
 void TrafficController::optimize_traffic()
 {
-	std::string traffic_light_state = intersection.traffic_light.get_current_traffic_light_state();
+	std::string traffic_light_state = intersection.display_traffic_light_state();
 	
 	std::cout << "Optimizing traffic with traffic light state: " << traffic_light_state << std::endl;
 	
 	for (auto& v : road.get_vehicles())
 	{
 		if (traffic_light_state == "RED")
+
 		{	
 			if (!v->is_vehicle_stopped())
 			{

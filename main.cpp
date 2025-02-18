@@ -10,9 +10,9 @@ int main()
 	Intersection intersection;
 	TrafficController traffic_controller(intersection, road);
 
-	road.add_vehicle(std::make_unique<Vehicle>(1, 2));
-	road.add_vehicle(std::make_unique<Vehicle>(2, 3));
-	road.add_vehicle(std::make_unique<Vehicle>(3, 4));
+	road.add_vehicle(std::make_unique<Vehicle>(1, 2, &intersection.traffic_light));
+	road.add_vehicle(std::make_unique<Vehicle>(2, 3, &intersection.traffic_light));
+	road.add_vehicle(std::make_unique<Vehicle>(3, 4, &intersection.traffic_light));
 
 	//for (auto& v:road.get_vehicles())
 	for(int step=0; step<20; step++)

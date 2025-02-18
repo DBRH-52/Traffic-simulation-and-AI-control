@@ -2,6 +2,7 @@
 #define VEHICLE_H
 
 #include <iostream>
+#include "TrafficLight.h"
 
 class Vehicle
 {
@@ -11,12 +12,15 @@ private:
 	int vehicle_speed;
 	bool vehicle_stopped;
 
+	TrafficLight* traffic_light;
+
 public:
-	Vehicle(int _id, int _speed);
+	Vehicle(int _id, int _speed, TrafficLight* _traffic_light);
 
 	void vehicle_move();
 	void vehicle_stop();
 	void vehicle_drive();
+	//void set_traffic_light_state(TrafficLight* _traffic_light);
 
 	int get_vehicle_id() const;
 	int get_vehicle_position() const;
