@@ -10,13 +10,15 @@ int main()
 	Intersection intersection;
 	TrafficController traffic_controller(intersection, road);
 
-	//road.add_vehicle(Vehicle(1, 2));
-	//road.add_vehicle(Vehicle(2, 3));
-	//road.add_vehicle(Vehicle(3, 4));
+	road.add_vehicle(std::make_unique<Vehicle>(1, 2));
+	road.add_vehicle(std::make_unique<Vehicle>(2, 3));
+	road.add_vehicle(std::make_unique<Vehicle>(3, 4));
 
-	for (int i = 0; i < 20; i++)
+	for (auto& v:road.get_vehicles())
 	{
-		std::cout << "Step: " << i << std::endl;
+		v->vehicle_drive();
+
+		std::cout << "Step: " << v->get_vehicle_id() << std::endl;
 
 		intersection.update_light_timer();
 		road.update_road();

@@ -10,7 +10,7 @@ void TrafficController::optimize_traffic()
 	int waiting_vehicles = 0;
 	for (auto& v : road.get_vehicles())
 	{
-		if (v.is_vehicle_stopped())
+		if (v->is_vehicle_stopped())
 		{
 			waiting_vehicles++;
 		}
