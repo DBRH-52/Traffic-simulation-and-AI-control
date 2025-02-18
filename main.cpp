@@ -14,20 +14,20 @@ int main()
 	road.add_vehicle(std::make_unique<Vehicle>(2, 3));
 	road.add_vehicle(std::make_unique<Vehicle>(3, 4));
 
-	for (auto& v:road.get_vehicles())
+	//for (auto& v:road.get_vehicles())
+	for(int step=0; step<20; step++)
 	{
-		v->vehicle_drive();
+		//v->vehicle_drive();
 
-		std::cout << "Step: " << v->get_vehicle_id() << std::endl;
+		std::cout << "Step: " << step+1 << std::endl;
 
 		intersection.update_light_timer();
-		road.update_road();
 		traffic_controller.optimize_traffic();
-
+		road.update_road();
 		intersection.display_traffic_light_state();
 		road.display_vehicle();
 
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 	}
-
+	return 0;
 }
