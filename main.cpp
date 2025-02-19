@@ -1,11 +1,15 @@
 #include <iostream>
 #include <thread>
+#include <cstdlib>
+#include <ctime>
 #include "Road.h"
 #include "Intersection.h"
 #include "TrafficController.h"
 
 int main()
 {
+	srand(time(0));
+
 	Road road(100);
 	Intersection intersection;
 	TrafficController traffic_controller(intersection, road);

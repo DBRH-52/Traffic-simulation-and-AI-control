@@ -66,3 +66,8 @@ bool Vehicle::is_vehicle_stopped() const
 {
 	return vehicle_stopped;
 }
+
+int Vehicle::get_random_speed()
+{
+	return 1 + (rand() % 5);
+}

@@ -20,6 +20,7 @@ void TrafficController::optimize_traffic()
 			{
 				v->vehicle_stop();
 				std::cout << traffic_light_state << "! Vehicle: " << v->get_vehicle_id() << " has stopped." << std::endl;
+				std::cout << "Speed: " << v->get_random_speed() << std::endl;
 			}
 		}
 		else if (traffic_light_state == "GREEN" || traffic_light_state == "YELLOW")
@@ -28,6 +29,7 @@ void TrafficController::optimize_traffic()
 			{
 				v->vehicle_drive();
 				std::cout << traffic_light_state << "! Vehicle: " << v->get_vehicle_id() << " is driving again." << std::endl;
+				std::cout << "Speed: " << v->get_random_speed() << std::endl;
 			}
 		}
 	}

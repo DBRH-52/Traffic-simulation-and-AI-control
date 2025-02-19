@@ -2,6 +2,8 @@
 #define VEHICLE_H
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "TrafficLight.h"
 
 class Vehicle
@@ -26,6 +28,8 @@ public:
 	int get_vehicle_position() const;
 	int get_vehicle_speed() const;
 	bool is_vehicle_stopped() const;
+
+	int get_random_speed();
 };
 
 #endif //VEHICLE_H
